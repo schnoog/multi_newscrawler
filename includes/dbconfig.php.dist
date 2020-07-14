@@ -1,0 +1,9 @@
+<?php
+    DB::$user = 'newscrawler';
+    DB::$password = 'newscrawler_database_user_password';
+    DB::$dbName = 'newscrawler';
+    DB::$encoding = 'utf8';
+    DB::$host = 'localhost';
+    // DB::$host = '123.111.10.23'; // Use for webserver
+    DB::$port = '3306';
+
