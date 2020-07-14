@@ -6,6 +6,7 @@ function CrawlAllSources(){
     ob_implicit_flush(true);
     global $cfg;
     set_time_limit(0);
+    $getall = array();
     for($x=0;$x < count($cfg['nss']);$x++){
             $cnt = 0;
             $ns = $cfg['nss'][$x];
@@ -16,13 +17,23 @@ function CrawlAllSources(){
             $interval = DateInterval::createFromDateString('1 day');
             $period   = new DatePeriod($start, $interval, $end);       
             foreach ($period as $dt) {
-                echo "Crawling $ns" . $dt->format("Y"),$dt->format("m"),$dt->format("d") . "<br>";
-                buffer_flush();
-                DrainNews($ns,$dt->format("Y"),$dt->format("m"),$dt->format("d"));
+                  $getall[$dt->format("Y") . "-" . $dt->format("m") . "-" . $dt->format("d")][] = $ns;
             }
-
     }
+    ksort($getall);
+    foreach($getall as $crawldate => $sources){
+        list($year,$month,$day)  = explode("-",$crawldate);
+        for($y=0;$y<count($sources);$y++){
+            $source = $sources[$y];
+            echo "Crawl $year-$month-$day from $source ".PHP_EOL;
+            buffer_flush();
+            DrainNews($source,$year,$month,$day);
+        }
+    }
+
     set_time_limit(30);
+
+//debugout($getall);
 
 }
 
