@@ -1,7 +1,7 @@
 <?php
 
 ini_set('memory_limit', '2048M');
-
+$cfg['url'] = "https://newscrawler.eu";
 
 /**
  * Skip these topics
