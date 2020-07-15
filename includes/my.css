@@ -1,0 +1,32 @@
+svg.ct-chart-bar, svg.ct-chart-line{
+    overflow: visible;
+}
+.ct-label.ct-label.ct-horizontal.ct-end {
+  position: relative;
+  justify-content: flex-end;
+  text-align: right;
+  transform-origin: 100% 0;
+  transform: translate(-100%) rotate(-90deg);
+  white-space:nowrap;
+  color:black;
+}
+
+.ct-label.ct-label {
+  color:black;
+}
+
+.my-cool-point{
+  fill-opacity: 1!important;
+  stroke-width: 0px;
+  stroke: red;
+  transition: all 0.2s linear;
+}
+.my-cool-point:hover{
+  r: 7;
+  stroke-opacity: 0.2;
+  stroke-width: 20px;
+}
+
+input[type=checkbox] { 
+  transform: scale(1.5) !important;
+  }

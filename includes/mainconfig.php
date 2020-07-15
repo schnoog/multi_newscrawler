@@ -2,6 +2,17 @@
 
 ini_set('memory_limit', '2048M');
 $cfg['url'] = "https://newscrawler.eu";
+$cfg['site_title'] = "MyNewscrawler";
+
+$cfg['startyear'] = 2010;
+$cfg['endyear'] = date('Y');
+$cfg['debugout'] = true;
+
+$cfg['groupings'] = [
+                        'y-m' => 'per month',
+                        'y-m-d' => 'per day',
+                        'y-cw'  => 'per calendar week'
+                    ];
 
 /**
  * Skip these topics

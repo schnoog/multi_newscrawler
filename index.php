@@ -1,9 +1,24 @@
 <?php
-
 include_once("./loader.php");
+$data = false;
 
-//DrainEXNews(2020,1,21);
+if(isset($_POST['search_type'])){
+        
+
+    $data = ProcessRequest();
+
+    $cfg['searchtype'] = "list";
+    if($_POST['search_type'] == "Get the Graph"){
+        $cfg['searchtype'] = "graph";
+    }
 
 
 
-debugout($cfg['debug']);
+}
+
+
+
+
+$smarty->assign('data',$data);
+$smarty->assign('cfg', $cfg);
+$smarty->display('index.tpl');
