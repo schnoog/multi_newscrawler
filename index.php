@@ -9,11 +9,18 @@ if(isset($_POST['search_type'])){
 
     $cfg['searchtype'] = "list";
     if($_POST['search_type'] == "Get the Graph"){
-        echo "<h1>GRAPH</h1>";
+        
         $cfg['searchtype'] = "graph";
+        $data = ProcessRequest();
+
+        $data = GetGraphData($data);
+
+
+    }else{
+        $data = ProcessRequest();
     }
 
-    $data = ProcessRequest();
+    
 
 
 }

@@ -8,6 +8,7 @@ include_once("./includes/mainconfig.php");
 include_once("./vendor/autoload.php");
 include_once("./includes/dbconfig.php");
 include_once("./includes/outputhelper.php");
+include_once("./includes/helper.php");
 include_once("./includes/database_query.php");
 
 

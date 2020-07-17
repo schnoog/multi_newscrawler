@@ -126,7 +126,7 @@ function ProcessRequest(){
               break;
         }
 
-        return DB::query( "Select * , count(id) from " . $cfg['tableName']  . " WHERE %l  $grp",$where);
+        return DB::query( "Select * , count(id) AS mycount from " . $cfg['tableName']  . " WHERE %l  $grp",$where);
 
 
       }
