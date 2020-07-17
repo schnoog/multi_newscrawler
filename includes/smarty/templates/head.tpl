@@ -16,6 +16,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@0.7.7"></script>
+{else}
+<script src="bower_components/sorting-filtering-pagination-fancytable/src/fancyTable.js"></script>
 {/if}
 <!--<script src="bower_components/sorting-filtering-pagination-fancytable/src/fancyTable.js"></script>-->
 

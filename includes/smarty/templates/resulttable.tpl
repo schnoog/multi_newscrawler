@@ -17,3 +17,24 @@
 {/foreach}
 
 </tbody>
+</table>
+
+{literal}
+		<script>
+			$(document).ready(function() {
+				$("#results").fancyTable({
+				sortColumn:0, // column number for initial sorting
+				sortOrder: 'desc', // 'desc', 'descending', 'asc', 'ascending', -1 (descending) and 1 (ascending)
+				sortable: true,
+				pagination: false, // default: false
+				searchable: true,
+				globalSearch: true,
+				inputStyle: "",
+  				inputPlaceholder: "Search...",
+				
+				});	
+			});
+		
+		
+		</script>
+{/literal}
