@@ -102,10 +102,9 @@ function ProcessRequest(){
         }  
         $subclauseExlude->negate();
       }
-      $limit = " LIMIT 0,20";
       $limit = "";
       if($cfg['searchtype'] == "list"){
-        return DB::query( "Select *  from " . $cfg['tableName']  . " WHERE %l  LIMIT 0,20",$where);
+        return DB::query( "Select *  from " . $cfg['tableName']  . " WHERE %l  $limit",$where);
       }else{
         //GROUP BY DATE_FORMAT(summaryDateTime,'%Y-%m')
         $togroup = $_POST['graphtype'];
