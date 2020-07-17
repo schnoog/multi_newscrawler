@@ -123,6 +123,7 @@ function DrainDMNews($year,$month,$day){
                     }
             }
             DB::insertIgnore('headlines',$toadd);
+            if($cfg['tableName'] == "MEM_headline")DB::insertIgnore('MEM_headline',$toadd);
             //$cfg['debug'][]= "Added $cnt headlines";
     }
     $dayindex = (new DateTime("$year-$month-$day"))->diff(new DateTime('0001-01-01'))->format('%a days');
