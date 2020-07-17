@@ -104,7 +104,7 @@ function ProcessRequest(){
       }
       $limit = "";
       if($cfg['searchtype'] == "list"){
-        return DB::query( "Select *  from " . $cfg['tableName']  . " WHERE %l  $limit",$where);
+        return DB::query( "Select *  from " . $cfg['tableName']  . " WHERE %l  $limit ORDER BY label DESC",$where);
       }else{
         //GROUP BY DATE_FORMAT(summaryDateTime,'%Y-%m')
         $togroup = $_POST['graphtype'];
