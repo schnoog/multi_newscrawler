@@ -17,7 +17,9 @@
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@0.7.7"></script>
 {else}
-<script src="bower_components/sorting-filtering-pagination-fancytable/src/fancyTable.js"></script>
+<!--<script src="bower_components/sorting-filtering-pagination-fancytable/src/fancyTable.js"></script>-->
+<script src="bower_components/jquery.tablesorter.min.js"></script>
+<script src="bower_components/jquery.tablesorter.widgets.min.js"></script>
 {/if}
 <!--<script src="bower_components/sorting-filtering-pagination-fancytable/src/fancyTable.js"></script>-->
 
