@@ -103,6 +103,7 @@ function ProcessRequest(){
         $subclauseExlude->negate();
       }
       $limit = " LIMIT 0,20";
+      $limit = "";
       if($cfg['searchtype'] == "list"){
         return DB::query( "Select *  from " . $cfg['tableName']  . " WHERE %l  LIMIT 0,20",$where);
       }else{
