@@ -18,9 +18,10 @@
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@0.7.7"></script>
 {else}
 <!--<script src="bower_components/sorting-filtering-pagination-fancytable/src/fancyTable.js"></script>-->
-<script src="bower_components/bindWithDelay/bindWithDelay.js"></script>
-<script src="bower_components/jquery.filtertable.min.js"></script>
+<!--<script src="bower_components/bindWithDelay/bindWithDelay.js"></script>
+<script src="bower_components/jquery.filtertable.min.js"></script>-->
 
+<script src="bower_components/filtable.min.js"></script>
 <!--<script src="bower_components/jquery.tablesorter.min.js"></script>-->
 <!--<script src="bower_components/jquery.tablesorter.widgets.min.js"></script>-->
 {/if}

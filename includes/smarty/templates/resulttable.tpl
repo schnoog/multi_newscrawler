@@ -1,5 +1,10 @@
 
 <center>{count($data)} records found</center>
+<div class="table-filters">
+	<label for="filter-country">Headline-filter:</label>
+	<input type="text" class="input-text" id="filter-country" data-filter-col="2">
+</div>
+
 <table class="table table-condensed" id='table' width='100%'>
 <thead>
     <th>Date</th>
@@ -22,6 +27,9 @@
 
 {literal}
 		<script>
-            $('#table').filterTable();
+            $(function(){
+	// Basic Filtable usage - pass in a div with the filters and the plugin will handle it
+	            $('#table').filtable({ controlPanel: $('.table-filters') });
+            });
 		</script>
 {/literal}
