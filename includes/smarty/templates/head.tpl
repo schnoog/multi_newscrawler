@@ -14,6 +14,30 @@
       <script src="bower_components/chartjs-plugin-zoom.js"></script>
     {else}
       <script src="bower_components/filtable.js"></script>
+      <script src="bower_components/table2CSV.js"></script>
+      {literal}
+      <script type="text/javascript">
+       $(document).ready(function () {
+          $('#table').each(function () {
+              var $table = $(this);
+
+//              var $button = $("<button type='button'>");
+              var $button = $('#csvbtn');
+//              $button.text("Export to spreadsheet");
+//              $button.insertAfter($table);
+
+              $button.click(function () {
+                  var csv = $table.table2CSV({
+                      delivery: 'download',
+                      filename: 'newscrawler_extract.csv'
+                  });
+                  window.location.href = 'data:text/csv;charset=UTF-8,' 
+                  + encodeURIComponent(csv);
+              });
+          });
+      })
+      </script>
+      {/literal}
     {/if}
 
 

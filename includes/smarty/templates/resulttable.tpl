@@ -1,7 +1,7 @@
 
-<center>{count($data)} records found</center>
+<center>{count($data)} records found  </center>
 <div class="table-filters">
-	<label for="filter-headlines">Headline-filter: (<small id="resultnum"></small>)</label>
+	<label for="filter-headlines">Headline-filter: (<small id="resultnum"></small>)<button class="button" type="button" id="csvbtn">Download as CSV</button></label>
 	<input type="text" placeholder="enter a search term to filter (also date possible)" class="form-control" id="filter-headlines" data-filter-col="0,1,2">
     
 </div>
