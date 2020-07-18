@@ -1,9 +1,9 @@
 
 <center>{count($data)} records found</center>
 <div class="table-filters">
-	<label for="filter-headlines">Headline-filter:</label>
-	<input type="text" class="input-text" id="filter-headlines" data-filter-col="0,1,2">
-    <small id="resultnum"></small>
+	<label for="filter-headlines">Headline-filter: (<small id="resultnum"></small>)</label>
+	<input type="text" class="form-control" id="filter-headlines" data-filter-col="0,1,2">
+    
 </div>
 
 <table class="table table-condensed" id='table' width='100%'>
