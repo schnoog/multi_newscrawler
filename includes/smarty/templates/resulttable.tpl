@@ -1,6 +1,6 @@
 
 <center>{count($data)} records found</center>
-<table id='table' width='100%'>
+<table class="table table-condensed" id='table' width='100%'>
 <thead>
     <th>Date</th>
     <!--<th>&nbsp;</th>-->
@@ -9,8 +9,8 @@
 </thead>
 <tbody>
 {foreach $data as $record}
-    <tr>
-        <td nowrap style='text-align:left' >{$record.label}&nbsp;</td>
+    <tr class="{$cfg.ns[$record.newssource].lineclass}">
+        <td nowrap style='text-align:left' class="light">{$record.label}&nbsp;</td>
         <!--<td>&nbsp;</td>-->
         <td nowrap  style='text-align:left' >{$cfg.ns[$record.newssource].name}&nbsp;</td>
         <td><a href="{$cfg.ns[$record.newssource].link}{$record.link}" target="blank">{$record.headline}</a></td>

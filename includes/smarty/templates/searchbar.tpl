@@ -25,7 +25,7 @@
         </div>
         <div class="col-md-2">
             <label for "exclsearchterm">Excluding any of the term(s)<br /><small>comma separated</small></label>
-            <input type="text" name="exclsearchterm" id="exclsearchterm" value="{if isset($cfg.post.exclsearchterm|escape)}{$cfg.post.exclsearchterm}{/if}" class="form-control">
+            <input type="text" name="exclsearchterm" id="exclsearchterm" value="{if isset($cfg.post.exclsearchterm)}{$cfg.post.exclsearchterm|escape}{/if}" class="form-control">
         </div>
 
         <div class="col-md-1">

@@ -21,6 +21,7 @@ $res = DB::query("Select * from newssources");
 for($x=0;$x<count($res);$x++){
     $cfg['ns'][$res[$x]['shortname']]['name'] = $res[$x]['fullname'];
     $cfg['ns'][$res[$x]['shortname']]['link'] = $res[$x]['linkbase'];
+    $cfg['ns'][$res[$x]['shortname']]['lineclass'] = $res[$x]['lineclass'];
     $cfg['nss'][] = $res[$x]['shortname'];
 }
 
