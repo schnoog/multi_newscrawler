@@ -15,10 +15,10 @@
 </thead>
 <tbody>
 {foreach $data as $record}
-    <tr class="{$cfg.ns[$record.newssource].lineclass}">
+    <tr >
         <td nowrap style='text-align:left' class="light">{$record.label}&nbsp;</td>
         <!--<td>&nbsp;</td>-->
-        <td nowrap  style='text-align:left' >{$cfg.ns[$record.newssource].name}&nbsp;</td>
+        <td nowrap  style='text-align:left' class="{$cfg.ns[$record.newssource].lineclass}">{$cfg.ns[$record.newssource].name}&nbsp;</td>
         <td><a href="{$cfg.ns[$record.newssource].link}{$record.link}" target="blank">{$record.headline}</a></td>
     </tr>
 {/foreach}
