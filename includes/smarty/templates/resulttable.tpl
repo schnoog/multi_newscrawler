@@ -1,8 +1,9 @@
 
 <center>{count($data)} records found</center>
 <div class="table-filters">
-	<label for="filter-country">Headline-filter:</label>
-	<input type="text" class="input-text" id="filter-country" data-filter-col="2">
+	<label for="filter-headlines">Headline-filter:</label>
+	<input type="text" class="input-text" id="filter-headlines" data-filter-col="0,1,2">
+    <small id="resultnum"></small>
 </div>
 
 <table class="table table-condensed" id='table' width='100%'>

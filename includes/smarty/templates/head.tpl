@@ -21,7 +21,7 @@
 <!--<script src="bower_components/bindWithDelay/bindWithDelay.js"></script>
 <script src="bower_components/jquery.filtertable.min.js"></script>-->
 
-<script src="bower_components/filtable.min.js"></script>
+<script src="bower_components/filtable.js"></script>
 <!--<script src="bower_components/jquery.tablesorter.min.js"></script>-->
 <!--<script src="bower_components/jquery.tablesorter.widgets.min.js"></script>-->
 {/if}
