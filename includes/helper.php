@@ -104,7 +104,7 @@ function fixLang($strGet){
  */
 
 function fillEmpty($given,$selector,$fillwith,$min,$max){
-    echo "<h1> Fillempty $selector  -- $min to $max  </h1>";
+
     $tofill = array();
 
     if($selector == "y-m"){
