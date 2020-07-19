@@ -6,7 +6,7 @@ $cfg['site_title'] = "MyNewscrawler";
 
 $cfg['startyear'] = 2010;
 $cfg['endyear'] = date('Y');
-$cfg['debugout'] = true;
+$cfg['debugout'] = false;
 $cfg['dbdebug'] = false;
 
 $cfg['groupings'] = [
