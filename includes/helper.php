@@ -37,7 +37,7 @@ function GetGraphData($data){
         
         $label .= ") ";
     }else{
-        $label .= $cfg['ns'][$_POST['newssource']]['name'] . "";
+        $label .= $cfg['ns'][$_POST['newssource']]['name'] . " ";
     }
     $label .= "containing - " . $cfg['post']['searchterm'] . " - ";
     if(strlen($cfg['post']['exclsearchterm'])>0){
