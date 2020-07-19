@@ -8,9 +8,9 @@ function SavePostData(){
     //search_type
     $ins = array();
     foreach($cfg['post'] as $key => $value){
-        if($key != "search_type")
-        $ins[$key] = $value;
-
+        if($key != "search_type"){
+            if($key != 'resultlimit')    $ins[$key] = $value;
+        }
     }
     if(count($ins)>1){
         DB::insertIgnore('searches',$ins);
@@ -44,6 +44,7 @@ function GetGraphData($data){
         $label .= "excluding - " . $cfg['post']['exclsearchterm'] . " - ";
     }
     $grp = "";
+    if(!is_array($data))return false;
     for($x=0;$x < count($data);$x++){
 
 

@@ -103,8 +103,15 @@ function ProcessRequest(){
         $subclauseExlude->negate();
       }
       $limit = "";
+      if(isset($_POST['resultlimit'])){
+        if(in_array($_POST['resultlimit'],$cfg['resultlimits'])){
+              if (is_numeric($_POST['resultlimit']) ) $limit = " LIMIT 0, " . $_POST['resultlimit'];
+
+
+        }
+      }
       if($cfg['searchtype'] == "list"){
-        return DB::query( "Select *  from " . $cfg['tableName']  . " WHERE %l  $limit ORDER BY label DESC",$where);
+        return DB::query( "Select *  from " . $cfg['tableName']  . " WHERE %l ORDER BY label DESC $limit",$where);
       }else{
         //GROUP BY DATE_FORMAT(summaryDateTime,'%Y-%m')
         $togroup = $_POST['graphtype'];

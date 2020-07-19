@@ -1,6 +1,7 @@
 	<div class="row">
         <center>
-            <h2>Newscrawler - Search</h2>
+            <h2><a href="https://newscrawler.eu"><small class="mysmall">NewsCrawler.eu</small></a> Newscrawler - Search <a href="https://twitter.com/schnoogsl" target="_blank"><small class="mysmall">A schnoogsl service</small></a></h2>
+            
 		
         <p>Search within {$cfg.recordnumber} the headlines from {$cfg.nslist}<br />
         All headlines excluding the topics -{foreach $cfg.nosafe as $nosave}{$nosave}-{/foreach} since January 1st 2010 (<small>daily updated</small>)
@@ -67,10 +68,17 @@
         </div>
         <div class="col-md-2">
             <table><tr><td>
-
+            
             <input type="submit" id="searchlist" name="search_type" value="Get the List" class="form-control btn btn-success" >
+            <select name="resultlimit" id="resultlimit" class="form-control">
+                {foreach $cfg.resultlimits as $reslim }
+                    <option value="{$reslim}">{$reslim}</option>
+                {/foreach}
 
-            </td><td>
+            </select>
+            <small class="myextrasmall">Result limit</small>
+            </td><td>&nbsp;</td><td>
+            <small class="myextrasmall">Chart-Grouping</small>            
             <select name="graphtype" id="graphtype" class="form-control">
                 {foreach from=$cfg.groupings key=timegroup item=timegrouplabel }
                     <option value="{$timegroup}" {if isset($cfg.post.graphtype)}{if $cfg.post.graphtype == $timegroup}selected="selected"{/if}{/if}>{$timegrouplabel}</option>

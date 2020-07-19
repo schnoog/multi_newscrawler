@@ -9,6 +9,8 @@ $cfg['endyear'] = date('Y');
 $cfg['debugout'] = false;
 $cfg['dbdebug'] = false;
 
+$cfg['resultlimits'] = [1000,5000,10000,15000,20000,'unlimited'];
+
 $cfg['groupings'] = [
                         'y-m' => 'per month',
                         'y-m-d' => 'per day',

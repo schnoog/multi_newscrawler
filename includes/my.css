@@ -46,3 +46,11 @@ input[type=checkbox] {
   .table-condensed > tfoot > tr > td {
     padding: 0px;
   }
+
+  .mysmall {
+    font-size: 10px;
+  }
+
+  .myextrasmall {
+    font-size: 12px;
+  }
