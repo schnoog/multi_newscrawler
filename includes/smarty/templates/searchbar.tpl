@@ -10,7 +10,7 @@
         </center>
         <div class="col-md-2">
             <table><tr><td>
-            <button class="btn" onclick="$('#predefdiv').toggleClass('hidden');" alt="Show / Hide predefined searches" title="Show / Hide predefined searches"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></button>
+            <button class="btn" onclick="$('#predefdiv').toggleClass('hidden');" alt="Show / Hide predefined searches   " title="Show / Hide predefined searches"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></button>
 			
             </td><td>
             
@@ -92,6 +92,7 @@
             </div>
             <div class="col-md-6">
                 <select id="predef" name="predef" class="form-control" onchange="selectPredefined(this.value);">
+                        <option value="0"></option>
                     {foreach $cfg.predefined as $predlabel => $predid}
                         <option value="{$predid}">{$predlabel}</option>
                     {/foreach}
