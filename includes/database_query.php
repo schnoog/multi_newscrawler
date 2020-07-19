@@ -121,8 +121,8 @@ function ProcessRequest(){
               $lblD = ", DATE_FORMAT(label,'%Y-%m') AS MYDEF ";
               break;
             case "y-cw":
-              $grp = "GROUP BY CONCAT(jahr,kalenderwoche)";
-              $lblD = ", CONCAT(jahr,kalenderwoche) AS MYDEF ";              
+              $grp = "GROUP BY CONCAT(jahr, '-' ,kalenderwoche)";
+              $lblD = ", CONCAT(jahr, '-' ,kalenderwoche) AS MYDEF ";              
               break;
 
             default:
