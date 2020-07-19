@@ -122,7 +122,7 @@ function ProcessRequest(){
               break;
             case "y-cw":
               $grp = "GROUP BY CONCAT(jahr, '-' ,kalenderwoche)";
-              $lblD = ", CONCAT(jahr, '-' ,kalenderwoche) AS MYDEF ";              
+              $lblD = ", CONCAT(jahr, '-' ,LPAD(kalenderwoche, 2, 0)) AS MYDEF ";              
               break;
 
             default:
