@@ -35,12 +35,25 @@ for($x=0;$x<count($res);$x++){
 $cfg['recordnumber'] = DB::queryFirstField("Select count(id) from " . $cfg['tableName']);
 $cfg['nslist'] = implode(", ", $cfg['nsslong']);
 
+/**
+ * prepare predefined searches
+ */
+$allS = DB::query("Select id,searchlabel from searches WHERE active=1");
+for($x=0;$x<count($allS);$x++){
+    $cfg['predefined'][$allS[$x]['searchlabel']] = $allS[$x]['id'];
 
+}
 
 /**
  * SavePOSTRequestData in cfg
  */
 $cfg['post'] = $_POST;
+if(isset($_REQUEST['sq'])){
+        SavePostData(); 
+
+}
+
+
 $cfg['ns_select'] = "";
 if(isset($_POST['newssource'])){
     $cfg['ns_select'] = $_POST['newssource'];

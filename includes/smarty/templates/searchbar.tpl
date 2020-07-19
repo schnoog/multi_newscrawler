@@ -9,9 +9,12 @@
         
         </center>
         <div class="col-md-2">
-			<center> 
+            <table><tr><td>
+            <button class="btn" onclick="$('#predefdiv').toggleClass('hidden');" alt="Show / Hide predefined searches" title="Show / Hide predefined searches"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></button>
+			
+            </td><td>
             
-            <form method="post">
+            <form method="post" id="searchform">
             <label for "newssource">Select the news source(s)</label>
             <select name="newssource" id="newssource" class="form-control">
                 <option value="all" {if $cfg.ns_select == "all"}selected="selected"{/if}>All Sources</option>
@@ -20,6 +23,7 @@
                     <option value="{$shortid}" {if $cfg.ns_select == $shortid}selected="selected"{/if}>{$longdata.name}</option>
                 {/foreach}
             </select>
+            </td></tr></table>
         </div>
         <div class="col-md-3">
         <table  width="100%"><tr><td>
@@ -81,3 +85,49 @@
 		</div>
 	</div>
     
+    <div class="row hidden" id="predefdiv">
+        <center>
+            <div class="col-md-3">
+            <p>Some predefined searches</p>
+            </div>
+            <div class="col-md-6">
+                <select id="predef" name="predef" class="form-control" onchange="selectPredefined(this.value);">
+                    {foreach $cfg.predefined as $predlabel => $predid}
+                        <option value="{$predid}">{$predlabel}</option>
+                    {/foreach}
+                </select> 
+            </div>
+            <div class="col-md-3">
+            </div>
+        </center>
+    </div>
+
+    {literal}
+        <script type="text/javascript">
+        
+            function selectPredefined(selvalue){
+
+                $.getJSON( 'ajaxbackend.php?predef=' + selvalue, function( data ) {
+                var items = [];
+                $.each( data, function( key, val ) {
+                    if(key != "id"){
+                        if((key == 'cisearch') || (key == 'ciexclsearch') ){
+                                if(val == 1){
+                                    $('#' + key).prop("checked", true);
+                                }else{
+                                    $('#' + key).prop("checked", false);
+                                }
+                        }else{
+                        $('#' + key).val(val);
+                        }
+                    }
+                });
+                });
+
+
+            }
+
+        
+
+        </script>    
+    {/literal}
