@@ -109,26 +109,35 @@ function ProcessRequest(){
         //GROUP BY DATE_FORMAT(summaryDateTime,'%Y-%m')
         $togroup = $_POST['graphtype'];
         $grp = "";
+        $lblD = "";
         switch ($togroup){
             case "y-m-d":
               $grp = " GROUP BY label ";
+              $lblD = ", label AS MYDEF ";
               break;
 
             case "y-m":
               $grp = "GROUP BY DATE_FORMAT(label,'%Y-%m')";
+              $lblD = ", DATE_FORMAT(label,'%Y-%m') AS MYDEF ";
               break;
-
             case "y-cw":
               $grp = "GROUP BY CONCAT(jahr,kalenderwoche)";
+              $lblD = ", CONCAT(jahr,kalenderwoche) AS MYDEF ";              
               break;
 
             default:
               break;
         }
 
-        return DB::query( "Select * , count(id) AS mycount from " . $cfg['tableName']  . " WHERE %l  $grp",$where);
+        $retData = DB::query( "Select * ". $lblD. " , count(id) AS mycount from " . $cfg['tableName']  . " WHERE %l  $grp ORDER by label ASC",$where);
+        $min = $retData[0]['MYDEF'];
+        $max = $retData[count($retData)- 1]['MYDEF'];
+        //debugout([$retData,$togroup]);
+        $retData = fillEmpty($retData,$togroup,"0",$min,$max);
+        //debugout($retData);
 
 
+        return $retData;
       }
 
 
