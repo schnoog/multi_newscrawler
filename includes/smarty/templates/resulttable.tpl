@@ -1,5 +1,5 @@
 
-<center>{count($data)} records found within {$cfg.dbquerytime} seconds </center>
+<center>{count($data)} records found within {$cfg.dbquerytime|string_format:"%.1f"} seconds </center>
 <div class="table-filters">
 	<label for="filter-headlines">Headline-filter: (<small id="resultnum"></small>)<button onclick="exportTableToCSV('newscrawler_export.csv')">Export HTML Table To CSV File</button></label>
 	<input type="text" placeholder="enter a search term to filter (also date possible)" class="form-control" id="filter-headlines" data-filter-col="0,1,2">
