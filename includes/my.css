@@ -54,3 +54,7 @@ input[type=checkbox] {
   .myextrasmall {
     font-size: 12px;
   }
+
+  #table {
+    display: none;
+  }
