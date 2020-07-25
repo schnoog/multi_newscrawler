@@ -1,2 +1,4 @@
 includes/dbconfig.php
 includes/smarty/templates_c/*
+remote_pull_files.sh
+
