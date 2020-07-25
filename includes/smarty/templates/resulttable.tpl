@@ -86,7 +86,7 @@ function exportTableToCSV(filename) {
 
             $(function(){
 	// Basic Filtable usage - pass in a div with the filters and the plugin will handle it
-	 //           $('#table').filtable({ controlPanel: $('.table-filters') });
+	            $('#table').filtable({ controlPanel: $('.table-filters') });
             });
 		</script>
 {/literal}

@@ -13,7 +13,7 @@
       <script src="bower_components/hammer.js"></script>
       <script src="bower_components/chartjs-plugin-zoom.js"></script>
     {else}
-     <!-- <script src="bower_components/filtable.js"></script> -->
+     <script src="bower_components/filtable.js"></script>
       <script src="bower_components/table2CSV.js"></script>
       {literal}
       <script type="text/javascript">
